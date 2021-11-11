@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <!-- To make the site responsive when user resize the browser -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="bootstrap-4.4.1-dist\css\bootstrap.css">
+        <!-- Bootstrap CSS source file -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="../css/login.css">
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+        <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="../css/manage.css">
+        <!-- Custom css to override any class in bootstrap.css -->
+
+        <title>Manage Account</title>
+
+        <!-- .button {
+            background-color: #7289da;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px;
+            border: 3px solid #7289da;
+        }
+        
+        .button:hover {
+            background-color: #ddd;
+            color: black;
+            border: 3px solid #ddd;
+        } -->
+
+    </head>
+
+    <body>
+        <header>
+            <div class="jumbotron text-center">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
+                    <a class="navbar-brand" href="#"><img
+                            src="https://drive.google.com/uc?id=1ANPwmvZ9bZPQjywWeXCLm56GNkuzQJEX&export=download"
+                            width="40" height="40" alt="kk8 logo"></a>
+                    <!-- This button appear at the navbar when the user make the browser smaller -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!--  This navbar dissapear when the user make the browser smaller -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <!-- Items in the navbar can be included in the list -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="dashboard.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="activityList.html">Activities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="foodMenu.html">Food</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="accoApply.html">Accommodation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="report.html">Report</a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="https://drive.google.com/uc?id=1_IkB8vTcFAAs-0zgapZeCRd99H3_tfaX&export=download"
+                                            width="30" height="30" class="rounded-circle" alt="default-pic">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right"
+                                        aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="manage.html">Manage Profile</a>
+                                        <a class="dropdown-item" href="home.html">Log Out</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+                <br><br>
+                <h1 class="display-4">Manage account</h1>
+                <p class="lead">You can manage your account here and make sure your personal information is the latest.
+                </p>
+            </div>
+        </header>
+        <!-- Profile picture placeholder -->
+        <div class="mb-4">
+            <img src="https://drive.google.com/uc?id=1_IkB8vTcFAAs-0zgapZeCRd99H3_tfaX&export=download" class="rounded"
+                style="box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important" width="100" height="110"
+                alt="default-pic">
+        </div>
+        <!-- Container for the user account information placeholder -->
+        <div class="container-sm shadow text-left mb-2">
+            <script type="text/javascript"></script> <!-- nanti ada script utk grab data from database -->
+            <h6 class="font-weight-light">Name : </h6>
+            <h6 class="font-weight-light">Matric No. :</h6>
+            <h6 class="font-weight-light">I/C No. :</h6>
+            <h6 class="font-weight-light">Gender :</h6>
+            <h6 class="font-weight-light">Race :</h6>
+            <h6 class="font-weight-light">Date of Birth :</h6>
+            <h6 class="font-weight-light">Address :</h6>
+            <h6 class="font-weight-light">Programme :</h6>
+            <h6 class="font-weight-light">Level of Study :</h6>
+            <h6 class="font-weight-light">Semester :</h6>
+            <h6 class="font-weight-light">Disablity :</h6>
+            <h6 class="font-weight-light">Room :</h6>
+            <br>
+            <h5 class="font-weight-bold">Personal Details</h5>
+            <h6 class="font-weight-light">Marital Status :</h6>
+            <h6 class="font-weight-light">Household Income :</h6>
+            <h6 class="font-weight-light">Number of Dependents :</h6>
+            <h6 class="font-weight-light">Bank :</h6>
+            <h6 class="font-weight-light">Bank Account Number :</h6>
+
+        </div>
+
+        <!-- Update details button -->
+        <div class="pt-3 mb-4 text-center">
+            <button type="button" onclick="update_details()" class="btn btn-primary waves-effect">Update
+                Details</button>
+        </div>
+        <script>
+            function update_details() {
+                location.href = "update_details.html";
+            }
+        </script>
+
+        <br>
+        <!-- Bootstrap JS source file link -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+        <script>
+            $(window).scroll(function () {
+                $('nav').toggleClass('scrolled', $(this).scrollTop() > 75);
+            });
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            });
+
+            $(window).scroll(function () {
+                $('nav').toggleClass('scrolled', $(this).scrollTop() > 75);
+            })
+        </script>
+
+        <!-- Footer of the site -->
+        <footer class="container-fluid px-2 px-sm-5 py-auto">
+            <div class="d-flex flex-column flex-sm-row text-light font-italic">
+                <div class="py-1 ml-sm-0 text-center">
+                    Copyright © 2020 - Kinabalu Residential College,&nbsp;<a class="text-light text-nowrap ml-sm-0"
+                        data-toggle="tooltip" data-placement="top" href="https://www.um.edu.my/" title="um.edu.my"><u>
+                            University
+                            of Malaya</u>
+                    </a>.
+                </div>
+                <div class="mx-auto mr-sm-0 pt-sm-1 pb-2 pb-sm-0">
+                    <a tabindex="0" class="text-light" data-toggle="tooltip" data-placement="top"
+                        href="https://www.instagram.com/unimalaya/" title="@unimalaya"><i
+                            class="px-2 fa fa-instagram fa-lg"></i></a><a tabindex="0" class="text-light"
+                        data-toggle="tooltip" data-placement="top" href="https://twitter.com/unimalaya/"
+                        title="@unimalaya"><i class="px-2 fa fa-twitter fa-lg"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
+</html>

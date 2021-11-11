@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Activity Registration</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Override Bootstrap CSS with custom CSS file -->
+        <link rel="stylesheet" type="text/css" href="../css/activity.css">
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+
+        <script>
+            $(window).scroll(function () {
+                $('nav').toggleClass('scrolled', $(this).scrollTop() > 75);
+            });
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            });
+
+            $(window).scroll(function () {
+                $('nav').toggleClass('scrolled', $(this).scrollTop() > 75);
+            });
+
+            $(document).ready(function () {
+                $("select").change(function () {
+                    $(this).find("option:selected").each(function () {
+                        var optionValue = $(this).attr("value");
+                        if (optionValue) {
+                            $(".box").not("." + optionValue).hide();
+                            $("." + optionValue).show();
+                        } else {
+                            $(".box").hide();
+                        }
+                    });
+                }).change();
+            });
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="jumbotron text-center">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
+                    <a class="navbar-brand" href="#"><img
+                            src="https://drive.google.com/uc?id=1ANPwmvZ9bZPQjywWeXCLm56GNkuzQJEX&export=download"
+                            width="40" height="40" alt="kk8 logo"></a>
+                    <!-- This button appear at the navbar when the user make the browser smaller -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- 	This navbar dissapear when the user make the browser smaller -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <!-- Items in the navbar can be included in the list -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="dashboard.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="activityList.html">Activities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="foodMenu.html">Food</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="accoApply.html">Accommodation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="report.html">Report</a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="https://drive.google.com/uc?id=1_IkB8vTcFAAs-0zgapZeCRd99H3_tfaX&export=download"
+                                            width="30" height="30" class="rounded-circle" alt="default-pic">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right"
+                                        aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="manage.html">Manage Profile</a>
+                                        <a class="dropdown-item" href="home.html">Log Out</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+                <br><br>
+                <h1 class="display-4">Activity Registration</h1>
+                <p class="lead">Hurry up and join them! Create lifelong memories and gain experiences through these
+                    project.
+                </p>
+            </div>
+        </header>
+        <main>
+            <div>
+                <!-- <div class="container"> -->
+                <div class="w3-content">
+                    <!-- <h2 class="w3-center" id="menu"><strong>LIST OF ACTIVITIES</strong></h2> -->
+                    <div class="w3-row w3-center w3-border  bg-light-grey">
+                        <a href="javascript:void(0)" onclick="openMenu(event, 'JTK');">
+                            <div class="w3-col s2 tablink w3-padding w3-hover-codecolour" id="myLink">JTK
+                            </div>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openMenu(event, 'ADIN');">
+                            <div class="w3-col s2 tablink w3-padding w3-hover-codecolour">ADIN</div>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openMenu(event, 'KEMAS');">
+                            <div class="w3-col s2 tablink w3-padding w3-hover-codecolour">KEMAS</div>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openMenu(event, 'KEP');">
+                            <div class="w3-col s2 tablink w3-padding w3-hover-codecolour">KEP</div>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openMenu(event, 'SENI');">
+                            <div class="w3-col s2 tablink w3-padding w3-hover-codecolour">SENI</div>
+                        </a>
+                        <a href="javascript:void(0)" onclick="openMenu(event, 'SUKAN');">
+                            <div class="w3-col s2 tablink w3-padding w3-hover-codecolour">SUKAN</div>
+                        </a>
+
+                    </div>
+
+                    <form>
+
+                        <div id="JTK" class="w3-container menu w3-padding-32 w3-white">
+                            <form action="/.php">
+                                <label for="College Annual Dinner">Performance Audition</label>
+
+                                <input type="submit" name="submit" value="Register" class="button w3-right" />
+                                <p class="w3-text-grey">&emsp;by Malam Anugerah Kinabalu</p>
+                            </form>
+                            <hr>
+                            <form action="/.php">
+                                <label for="College Annual Dinner">Performance Audition</label>
+
+                                <input type="submit" name="submit" value="Register" class="button w3-right" />
+                                <p class="w3-text-grey">&emsp;by Malam Anugerah Kinabalu</p>
+                            </form>
+                            <hr>
+                            <form action="/.php">
+                                <label for="College Annual Dinner">Performance Audition</label>
+
+                                <input type="submit" name="submit" value="Register" class="button w3-right" />
+                                <p class="w3-text-grey">&emsp;by Malam Anugerah Kinabalu</p>
+                            </form>
+                            <hr>
+                            <form action="/.php">
+                                <label for="College Annual Dinner">College Annual Dinner</label>
+
+                                <input type="submit" name="submit" value="Register" class="button w3-right" />
+                                <p class="w3-text-grey">&emsp;by Malam Anugerah Kinabalu</p>
+                            </form>
+                            <hr>
+                            <form action="/.php">
+                                <label for="College Annual Dinner">Emcee Audition</label>
+
+                                <input type="submit" name="submit" value="Register" class="button w3-right" />
+                                <p class="w3-text-grey">&emsp;by Malam Anugerah Kinabalu</p>
+                            </form>
+                            <hr>
+                            <form action="/.php">
+                                <label for="College Annual Dinner">Performance Audition</label>
+
+                                <input type="submit" name="submit" value="Register" class="button w3-right" />
+                                <p class="w3-text-grey">&emsp;by Malam Anugerah Kinabalu</p>
+                            </form>
+
+
+                        </div>
+
+
+
+                        <div id="ADIN" class="w3-container menu w3-padding-32 w3-white">
+
+                            <input type="checkbox" class="form-check-input" id="menu" name="Roti Canai">
+                            <label for="Roti Canai">Roti Canai</label><br>
+                            <label>Quantity : </label>
+                            <input id="quantity" type="text" size="4">
+                            <span class="w3-right w3-tag codecolour w3-round">RM1.50</span>
+                            <p class="w3-text-grey">Fish curry/Dal(lentil based soup)</p>
+                            <hr>
+
+                        </div>
+                        <div id="KEMAS" class="w3-container menu w3-padding-32 w3-white"></div>
+                        <div id="KEP" class="w3-container menu w3-padding-32 w3-white"></div>
+                        <div id="SENI" class="w3-container menu w3-padding-32 w3-white"></div>
+                        <div id="SUKAN" class="w3-container menu w3-padding-32 w3-white"></div>
+                    </form>
+                </div>
+                <!-- <div class="row px-lg-5 py-4">
+                        <div class="col-lg-2">
+                            <div class="mb-5 mt-lg-3 " style="border-radius: .45rem; border-color: #7289da;">
+                                <div class="nav nav-pills d-flex flex-row d-lg-block text-center text-lg-left"
+                                    id="pills-tab" role="tablist">
+                                    <a class="nav-link active col-6 col-lg-12" id="v-pills-project-tab"
+                                        data-toggle="pill" href="#v-pills-project" role="tab"
+                                        aria-controls="v-pills-project" aria-selected="true">PROJECT</a>
+                                    <a class="nav-link col-6 col-lg-12" id="v-pills-feseni-tab" data-toggle="pill"
+                                        href="#v-pills-feseni" role="tab" aria-controls="v-pills-yreport"
+                                        aria-selected="false">FESENI</a>
+                                    <a class="nav-link col-6 col-lg-12" id="v-pills-sukmum-tab" data-toggle="pill"
+                                        href="#v-pills-sukmum" role="tab" aria-controls="v-pills-yreport"
+                                        aria-selected="false">SUKMUM</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="tab-content ml-lg-5 p-3" id="v-pills-tabContent"
+                                style="background-color:white; border-radius: 0.5rem;">
+                                <div class="tab-pane fade show active" id="v-pills-project" role="tabpanel"
+                                    aria-labelledby="v-pills-project-tab">
+                                    <form method="GET" action="activityStatus.html">
+                                        <div class="form-group row">
+                                            <p class="alert alert-warning text-center col-sm-11 p-1">You are only
+                                                allowed to
+                                                register 1 project at a time.</p>
+                                            <label for="selectActivity" class="col-sm-3 col-form-label">Activity
+                                                Name</label>
+                                            <div class="col-sm-8">
+                                                <select id="selectActivity" class="custom-select">
+                                                    <option selected>Select an activity</option>
+                                                    <optgroup label="JKP ADIN">
+                                                        <option value="kkc">Kelab Kebudayaan Cina</option>
+                                                        <option value="ks">Kinaschool</option>
+                                                    </optgroup>
+                                                    <optgroup label="JKP KEMAS">
+                                                        <option value="lepakina">Lepakina</option>
+                                                        <option value="octacares">Octacares</option>
+                                                        <option value="vip">Volunteer's International Project
+                                                        </option>
+                                                    </optgroup>
+                                                    <optgroup label="JKP KEP">
+                                                        <option value="fbi">Festival Belia Islam</option>
+                                                        <option value="feskek">Festival Kesenian dan Kebudayaan
+                                                            Kinabalu
+                                                        </option>
+                                                        <option value="surau">Surau Kinabalu</option>
+                                                    </optgroup>
+                                                    <optgroup label="JKP SENI">
+                                                        <option value="agk">Alunan Gangsa Kinabalu</option>
+                                                        <option value="festaka">Festival Tarian Kanak-Kanak</option>
+                                                        <option value="kelana">Kelana Production</option>
+                                                    </optgroup>
+                                                    <optgroup label="JKP SUKAN">
+                                                        <option value="osf">Octa Sports Fest</option>
+                                                        <option value="rof">Race of Fittest</option>
+                                                    </optgroup>
+                                                    <optgroup label="JTK">
+                                                        <option value="kw">Kinaworks</option>
+                                                        <option value="mak">Malam Anugerah Kinabalu</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <legend class="col-form-label col-sm-3 pt-0">Bureau/Division</legend>
+                                            <div class="col-sm-8">
+                                                <div class="form-check kkc lepakina octacares vip surau box">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="projectCheckbox">
+                                                    <label class="form-check-label"
+                                                        for="projectCheckbox">Committee</label>
+                                                </div>
+                                                <div class="form-check ks box">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="projectCheckbox">
+                                                    <label class="form-check-label"
+                                                        for="projectCheckbox">Facilitator</label>
+                                                </div>
+
+                                                <script text="text/javascript">
+                                                    var agk = [{
+                                                            name: "Dana dan Tajaan"
+                                                        },
+                                                        {
+                                                            name: "Kebajikan dan Perhubungan Luar"
+                                                        },
+                                                        {
+                                                            name: "Logistik dan Busana"
+                                                        },
+                                                        {
+                                                            name: "Ujibakat, Latihan & Persembahan"
+                                                        },
+                                                        {
+                                                            name: "Publisiti, Teknikal dan Multimedia"
+                                                        },
+                                                        {
+                                                            name: "Pemain Instrumental"
+                                                        }
+                                                    ];
+
+                                                    for (var i = 0; i < agk.length; i++) {
+                                                        document.write("<div class=\"form-check agk box\">");
+                                                        document.write(
+                                                            "<input class=\"form-check-input\" type=\"checkbox\" id=\"projectCheckbox\">"
+                                                        );
+                                                        document.write(
+                                                            "<label class=\"form-check-label\" for=\"projectCheckbox\">" +
+                                                            agk[i].name + "</label><br>");
+                                                        document.write("</div>");
+                                                    };
+
+                                                    var kelana = [{
+                                                            name: "Tatarias"
+                                                        },
+                                                        {
+                                                            name: "Busana"
+                                                        },
+                                                        {
+                                                            name: "Publisiti"
+                                                        },
+                                                        {
+                                                            name: "Tatabunyi"
+                                                        },
+                                                        {
+                                                            name: "Set"
+                                                        },
+                                                        {
+                                                            name: "Prop"
+                                                        },
+                                                        {
+                                                            name: "Tatacahaya"
+                                                        },
+                                                        {
+                                                            name: "Front of House"
+                                                        },
+                                                        {
+                                                            name: "Pengurus Pentas"
+                                                        }
+                                                    ];
+
+                                                    for (var i = 0; i < kelana.length; i++) {
+                                                        document.write("<div class=\"form-check kelana box\">");
+                                                        document.write(
+                                                            "<input class=\"form-check-input\" type=\"checkbox\" id=\"projectCheckbox\">"
+                                                        );
+                                                        document.write(
+                                                            "<label class=\"form-check-label\" for=\"projectCheckbox\">" +
+                                                            kelana[i].name + "</label><br>");
+                                                        document.write("</div>");
+                                                    };
+
+
+                                                    var kw = [{
+                                                            name: "Media (Photography)"
+                                                        },
+                                                        {
+                                                            name: "Creative (Designing)"
+                                                        },
+                                                        {
+                                                            name: "Publishing & Marketing"
+                                                        },
+                                                        {
+                                                            name: "Technical"
+                                                        }
+                                                    ];
+
+                                                    for (var i = 0; i < kw.length; i++) {
+                                                        document.write("<div class=\"form-check kw box\">");
+                                                        document.write(
+                                                            "<input class=\"form-check-input\" type=\"checkbox\" id=\"projectCheckbox\">"
+                                                        );
+                                                        document.write(
+                                                            "<label class=\"form-check-label\" for=\"projectCheckbox\">" +
+                                                            kw[i].name + "</label><br>");
+                                                        document.write("</div>");
+                                                    };
+
+                                                    var mak = [{
+                                                        name: "Program and Protocol"
+                                                    }, {
+                                                        name: "Funds and Sponsorship"
+                                                    }, {
+                                                        name: "Multimedia"
+                                                    }, {
+                                                        name: "Publicity"
+                                                    }, {
+                                                        name: "Technical"
+                                                    }, {
+                                                        name: "Gimmicks and Performances"
+                                                    }, {
+                                                        name: "Awards and Decorations"
+                                                    }, {
+                                                        name: "Registration"
+                                                    }];
+
+                                                    for (var i = 0; i < mak.length; i++) {
+                                                        document.write(
+                                                            "<div class=\"form-check fbi feskek festaka mak osf rof box\">"
+                                                        );
+                                                        document.write(
+                                                            "<input class=\"form-check-input\" type=\"checkbox\" id=\"projectCheckbox\">"
+                                                        );
+                                                        document.write(
+                                                            "<label class=\"form-check-label\" for=\"projectCheckbox\">" +
+                                                            mak[i].name + "</label><br>");
+                                                        document.write("</div>");
+                                                    };
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="text-align: center;">
+                                            <input type="submit" value="Submit &raquo;" class="button" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- end of nav pill -->
+                <!-- </div> -->
+                <!-- end of container column -->
+                <!-- </div> -->
+                <!-- end of container row -->
+                <!-- </div> -->
+                <!-- end of container -->
+        </main>
+        <br>
+        <footer class="container-fluid px-2 px-sm-5 py-auto">
+            <div class="d-flex flex-column flex-sm-row text-light font-italic">
+                <div class="py-1 ml-sm-0 text-center">
+                    Copyright © 2020 - Kinabalu Residential College,&nbsp;<a class="text-light text-nowrap ml-sm-0"
+                        data-toggle="tooltip" data-placement="top" href="https://www.um.edu.my/" title="um.edu.my"><u>
+                            University
+                            of Malaya</u>
+                    </a>.
+                </div>
+                <div class="mx-auto mr-sm-0 pt-sm-1 pb-2 pb-sm-0">
+                    <a tabindex="0" class="text-light" data-toggle="tooltip" data-placement="top"
+                        href="https://www.instagram.com/unimalaya/" title="@unimalaya"><i
+                            class="px-2 fa fa-instagram fa-lg"></i></a><a tabindex="0" class="text-light"
+                        data-toggle="tooltip" data-placement="top" href="https://twitter.com/unimalaya/"
+                        title="@unimalaya"><i class="px-2 fa fa-twitter fa-lg"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            $(document).ready(function () {
+                $("input[id='projectCheckbox']").change(function () {
+                    var maxAllowed = 3;
+                    var cnt = $("input[id='projectCheckbox']:checked").length;
+                    if (cnt > maxAllowed) {
+                        $(this).prop("checked", "");
+                        // alert('You can select maximum ' + maxAllowed + '!!');
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                $("input[id='feseniCheckbox']").change(function () {
+                    var maxAllowed = 3;
+                    var cnt = $("input[id='feseniCheckbox']:checked").length;
+                    if (cnt > maxAllowed) {
+                        $(this).prop("checked", "");
+                        // alert('You can select maximum ' + maxAllowed + '!!');
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                $("input[id='sukmumCheckbox']").change(function () {
+                    var maxAllowed = 3;
+                    var cnt = $("input[id='sukmumCheckbox']:checked").length;
+                    if (cnt > maxAllowed) {
+                        $(this).prop("checked", "");
+                        // alert('You can select maximum ' + maxAllowed + '!!');
+                    }
+                });
+            });
+
+            $(window).submit(function () {
+                confirmation();
+                return false;
+            });
+
+            function confirmation() {
+                if (window.confirm("Confirm submit?")) {
+                    window.location.assign("activityStatus.html")
+                } else {
+                    window.location.assign("activityReg.html")
+                }
+            }
+
+            function openMenu(evt, menuName) {
+                var i, x, tablinks;
+                x = document.getElementsByClassName("menu");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < x.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" codecolour", "");
+                }
+                document.getElementById(menuName).style.display = "block";
+                evt.currentTarget.firstElementChild.className += " codecolour";
+            }
+            document.getElementById("myLink").click();
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,15 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+ 
+footer{
+	background-color:#0c0c0c;
+	position: static; /* default: bottom of html */
+	bottom: 0;
+	font-size: 12px;
+}
+
+/* window size lg and more (lg=1200px)*/
+@media (min-width:1200px){
+	footer{
+			position: fixed; /* bottom of window */
+	}
+}

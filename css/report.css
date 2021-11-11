@@ -1,0 +1,268 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Full-width input fields */
+input[type=text],
+input[type=password] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 26px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Set a style for all buttons */
+/*button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    margin: 8px 20px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+	font-size:15px;
+}*/
+button:hover {
+    opacity: 0.8;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 40%;
+    padding-bottom: 30px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    animation: zoom 0.6s
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+header .jumbotron {
+    padding: 100px inherit;
+    margin-bottom: 50px;
+    color: white;
+    min-height: 300px;
+    border-radius: 0rem;
+    /*increase to make rounded rectangle*/
+    background-image: url('https://drive.google.com/uc?id=13lFVzVybydF8R0L1E9R1SVU_RD-4lU_O&export=download');
+    background-position: center;
+    background-size: cover;
+}
+
+.custom {
+    padding: 100px;
+    margin-bottom: 10px;
+    border-radius: 0.3rem;
+    background-color: #6c6c6c;
+    background-size: cover;
+    color: white;
+}
+
+header .navbar-nav {
+    padding-left: 30px;
+}
+
+header .navbar-nav>li {
+    margin: 8px;
+}
+
+header .bg-dark {
+    transition: 750ms ease;
+    /*unit is in ms*/
+    background: transparent !important;
+}
+
+header .bg-dark.scrolled {
+    background: #1a1a1a !important;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+header .dropdown-item:hover {
+    background-color: #e5e5e5;
+}
+
+@media screen and (max-width: 1000px) {
+    header .navbar {
+        background: #1a1a1a !important;
+        box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+
+footer {
+    background-color: #0c0c0c;
+    position: static;
+    /* default: bottom of html */
+    bottom: 0;
+    font-size: 12px;
+}
+
+/* window size lg and more (lg=1200px)*/
+@media (min-width:1200px) {
+    footer {
+        position: fixed;
+        /* bottom of window */
+    }
+}
+
+/* ---------------------- Report CSS ------------------------- */
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #7289da;
+}
+
+.btn-outline-secondary,
+.nav-pills a {
+    background-image: none;
+    color: #7289da;
+    background-color: transparent;
+}
+
+.sticky-top {
+    top: 50px;
+    background-color: white;
+}
+
+@media (min-width: 992px) {
+    .sticky-top {
+        top: 102px;
+        background-color: transparent;
+    }
+}
+
+.nav-pills a {
+    text-decoration: underline;
+    text-decoration-color: #7289da;
+}
+
+#customBorder1 {
+    border-left: 1px solid #7289da !important;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #7289da;
+    border-color: #7289da;
+}
+
+.tab-content .card {
+    border: 0.95px solid #7289da !important;
+    border-radius: 0.35rem;
+    background-color: rgb(250, 250, 250);
+}
+
+.card-title {
+    font-weight: bold;
+    color: #2f4596;
+}
+
+.card-header,
+.card-header h5 {
+    background-color: #7289da;
+    color: white;
+    font-weight: bold;
+}
+
+.card-body img {
+    image-orientation: from-image;
+    width: auto;
+    height: auto;
+    max-height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cases h5,
+#cases h1 {
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-body .list-group-item {
+    background-color: transparent;
+}
+
+.card-header,
+.card-title {
+    text-align: center;
+}
+
+div.scrollmenu {
+    background-color: transparent;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.disabled-delete {
+    color: grey;
+}
+
+.delete {
+    color: black;
+}

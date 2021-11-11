@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Full-width input fields */
+input[type=text],
+input[type=password],
+button[type=submit],
+a[type=submit] {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    padding-left: 60px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.modal i {
+    position: absolute;
+}
+
+.modal i.fa {
+    padding-top: 12px;
+}
+
+.nav-item>button {
+    border: none !important;
+    width: 100px !important;
+    padding: 8px 0px !important;
+    margin: 8px 10px !important;
+    width: 100% !important;
+    font-size: 16px !important;
+}
+
+.btn {
+    background-color: #7289da !important;
+    color: white !important;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid #888;
+    width: 100%;
+}
+
+/* Center the image and position the close button */
+.modal-header {
+    text-align: center;
+    margin: 10px 12px;
+    position: relative;
+}
+
+.modal-body {
+    padding: 10px 40px;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 20%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    padding: 10px;
+    background: #7289da;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+header .jumbotron {
+    padding: 100px inherit;
+    margin-bottom: 50px;
+    color: white;
+    min-height: 350px;
+    border-radius: 0rem;
+    /*increase to make rounded rectangle*/
+    background-image: url('https://drive.google.com/uc?id=1H5cejIUjTZuQK2bA4Bjna5koF5hZyfsp&export=download');
+    background-position: center;
+    background-size: cover;
+}
+
+.custom {
+    padding: 100px;
+    margin-bottom: 10px;
+    border-radius: 0.3rem;
+    background-color: #6c6c6c;
+    background-size: cover;
+    color: white;
+}
+
+header .navbar-nav {
+    padding-left: 30px;
+}
+
+header .navbar-nav>li {
+    margin: 8px;
+}
+
+header .bg-dark {
+    transition: 750ms ease;
+    /*unit is in ms*/
+    background: transparent !important;
+}
+
+header .bg-dark.scrolled {
+    background: #1a1a1a !important;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+header .dropdown-item:hover {
+    background-color: #e5e5e5;
+}
+
+@media screen and (max-width: 1000px) {
+    header .navbar {
+        background: #1a1a1a !important;
+        box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+
+footer {
+    background-color: #0c0c0c;
+    position: static;
+    /* default: bottom of html */
+    bottom: 0;
+    font-size: 12px;
+}
+
+/* window size lg and more (lg=1200px)*/
+@media (min-width:1200px) {
+    footer {
+        position: fixed;
+        /* bottom of window */
+    }
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon,
+.carousel-indicators {
+    filter: invert(1);
+}
+
+.ml16 {
+    overflow: hidden;
+}
+
+.ml16 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.modal a {
+    color: #1a0dab;
+}

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>KK8 - Report</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Override Bootstrap CSS with custom CSS file -->
+        <link rel="stylesheet" type="text/css" href="/../css/report.css">
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+        <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+        <script>
+            $(window).scroll(function () {
+                $('nav').toggleClass('scrolled', $(this).scrollTop() > 75);
+            });
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            });
+
+
+            function deleterow(r) {
+                var i = r.parentNode.parentNode.rowIndex;
+                console.log(i);
+                document.getElementById("report-table").deleteRow(i);
+            };
+
+            function smoothScroll(elementId) {
+                var MIN_PIXELS_PER_STEP = 16;
+                var MAX_SCROLL_STEPS = 30;
+                var target = document.getElementById(elementId);
+                var scrollContainer = target;
+                do {
+                    scrollContainer = scrollContainer.parentNode;
+                    if (!scrollContainer) return;
+                    scrollContainer.scrollTop += 1;
+                } while (scrollContainer.scrollTop == 0);
+
+                var targetY = 0;
+                do {
+                    if (target == scrollContainer) break;
+                    targetY += target.offsetTop;
+                } while (target = target.offsetParent);
+
+                var pixelsPerStep = Math.max(MIN_PIXELS_PER_STEP,
+                    (targetY - scrollContainer.scrollTop) / MAX_SCROLL_STEPS);
+
+                var stepFunc = function () {
+                    scrollContainer.scrollTop =
+                        Math.min(targetY, pixelsPerStep + scrollContainer.scrollTop);
+
+                    if (scrollContainer.scrollTop >= targetY) {
+                        return;
+                    }
+
+                    window.requestAnimationFrame(stepFunc);
+                };
+
+                window.requestAnimationFrame(stepFunc);
+            };
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="jumbotron text-center">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
+                    <a class="navbar-brand" href="#"><img
+                            src="https://drive.google.com/uc?id=1ANPwmvZ9bZPQjywWeXCLm56GNkuzQJEX&export=download"
+                            width="40" height="40" alt="kk8 logo"></a>
+                    <!-- This button appear at the navbar when the user make the browser smaller -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- 	This navbar dissapear when the user make the browser smaller -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <!-- Items in the navbar can be included in the list -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="dashboard.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="activityList.html">Activities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="foodMenu.html">Food</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="accoApply.html">Accommodation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="report.html">Report</a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="https://drive.google.com/uc?id=1_IkB8vTcFAAs-0zgapZeCRd99H3_tfaX&export=download"
+                                            width="30" height="30" class="rounded-circle" alt="default-pic">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right"
+                                        aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="manage.html">Manage Profile</a>
+                                        <a class="dropdown-item" href="home.html">Log Out</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+                <br><br>
+                <h1 class="display-4">Report An Issue</h1>
+                <p class="lead">We are pleased to solve any problems!</p>
+            </div>
+        </header>
+        <main class="px-5">
+            <div>
+                <div class="text-center bg-white">
+                    <span class="btn btn-outline-secondary btn-lg mx-auto border" data-toggle="collapse"
+                        href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
+                        style="border: 1px solid #7289da !important;">+ New Report</span>
+                </div>
+                <div class="container">
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body mt-5">
+                            <form>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-md-2 col-form-label mt-2 text-md-right">Problem
+                                        Type</label>
+                                    <div class="col-md-10 my-2">
+                                        <select class="form-control select2 select2-hidden-accessible"
+                                            style="width: 100%;" required="" tabindex="-1" aria-hidden="true">
+                                            <option value="" selected="selected">- Problem Type -</option>
+                                            <option value="10868"> ACRYLIC PLATE </option>
+                                            <option value="10812"> AIR - CONDITIONER </option>
+                                            <option value="10823"> AUTO GATE BARRIER </option>
+                                            <option value="10830"> BED </option>
+                                            <option value="10829"> BOOK SHELF </option>
+                                            <option value="10835"> CABINET </option>
+                                            <option value="10850"> CEILING </option>
+                                            <option value="10828"> CHAIR </option>
+                                            <option value="10838"> CISTERN </option>
+                                            <option value="10846"> CLEANLINESS </option>
+                                            <option value="10864"> CLOGGED </option>
+                                            <option value="10837"> CLOTHES HANGER </option>
+                                            <option value="11331"> Counter Service </option>
+                                            <option value="10862"> CURTAIN / BLIND </option>
+                                            <option value="10832"> DOOR </option>
+                                            <option value="10833"> DOOR LOCK </option>
+                                            <option value="10847"> DRAIN </option>
+                                            <option value="10826"> DRAWER / CUPBOARD </option>
+                                            <option value="10819"> DRYER </option>
+                                            <option value="10859"> ELECTRICAL TRIP </option>
+                                            <option value="10858"> EXHAUST FAN </option>
+                                            <option value="10811"> Fan </option>
+                                            <option value="10824"> FIRE ALARM PANEL </option>
+                                            <option value="10815"> FRIDGE </option>
+                                            <option value="10820"> GAS STOVE </option>
+                                            <option value="10851"> GRILL </option>
+                                            <option value="10849"> GUTTER </option>
+                                            <option value="10856"> INDUCTION COOKER </option>
+                                            <option value="10821"> KETTLE </option>
+                                            <option value="10810"> Lamp </option>
+                                            <option value="10870"> LANDSCAPE </option>
+                                            <option value="10865"> LEAKED </option>
+                                            <option value="10818"> LIFT </option>
+                                            <option value="10825"> LPG GAS </option>
+                                            <option value="10866"> MAIN HOLE </option>
+                                            <option value="10861"> MATTRESS </option>
+                                            <option value="10822"> MICB </option>
+                                            <option value="10816"> MICROWAVE </option>
+                                            <option value="10834"> MIRROR </option>
+                                            <option value="10860"> PA SYSTEM (PROJECTOR/SCREEN/MICROPHONE) </option>
+                                            <option value="10848"> PEST CONTROL </option>
+                                            <option value="10854"> PIPING </option>
+                                            <option value="10852"> ROAD </option>
+                                            <option value="10845"> ROOF </option>
+                                            <option value="10863"> SHOWER </option>
+                                            <option value="10853"> SIGNAGE </option>
+                                            <option value="10840"> SINK </option>
+                                            <option value="10857"> SOCKET / PLUG </option>
+                                            <option value="10827"> TABLE </option>
+                                            <option value="10817"> TELEVISION </option>
+                                            <option value="10844"> TILES / FLOOR </option>
+                                            <option value="10839"> TOILET BOWL </option>
+                                            <option value="10836"> TOWEL HANGER </option>
+                                            <option value="10814"> WASHING MACHINE </option>
+                                            <option value="10869"> WATER BOILER </option>
+                                            <option value="10855"> WATER DISPENSER </option>
+                                            <option value="10813"> WATER HEATER </option>
+                                            <option value="10841"> WATER PRESSURE </option>
+                                            <option value="10843"> WATER PROOFING </option>
+                                            <option value="10842"> WATER SUPPLY </option>
+                                            <option value="10831"> WINDOW </option>
+                                        </select>
+                                        <!--<span class="select2 select2-container select2-container--default select2-container--below" dir="ltr"
+                                                    style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox"
+                                                    aria-autocomplete="list" aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                                    aria-labelledby="select2-sub-container"><span class="select2-selection__rendered" id="select2-sub-container"
+                                                    title=""></span><span class="select2-selection__arrow" role="presentation"><b
+                                                    role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>-->
+                                    </div>
+                                    <label for="exampleFormControlTextarea1"
+                                        class="col-md-2 col-form-label mt-2 text-md-right">Problem
+                                        Details</label>
+                                    <div class="col-md-10 my-2">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                            placeholder="Please describe your problem" required></textarea>
+                                    </div>
+                                    <label for="exampleInputPassword1"
+                                        class="col-md-2 col-form-label mt-2 text-md-right">Mobile
+                                        Phone Num.</label>
+                                    <div class="col-md-10 my-2">
+                                        <input name="tel" type="text" class="form-control mx-0" id="tel"
+                                            placeholder="Enter mobile phone number" required="" style="width:100%;">
+                                    </div>
+                                    <label for="exampleInputPassword1"
+                                        class="col-md-2 col-form-label mt-2 text-md-right">Problem
+                                        Location</label>
+                                    <div class="col-md-10 my-2">
+                                        <textarea name="hd_location" rows="3" class="form-control" id="hd_location"
+                                            placeholder="Please describe your problem location" required=""></textarea>
+                                    </div>
+                                    <label for="exampleInputFile"
+                                        class="col-md-2 col-form-label mt-2 text-md-right">Upload
+                                        File </label>
+                                    <div class="col-md-10 my-2">
+                                        <input name="uploadedfile" type="file" id="uploadedfile">
+                                        <p class="help-block">Note: only jpg , gif , png ,pdf , doc , docx and max size
+                                            5 MB.</p>
+                                    </div>
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-lg-3 my-1 inline-block">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="danger" class="btn btn-danger btn-sm m-1">Cancel</button>
+                                    </div>
+
+                                    <!--<div class="col-lg-1 pt-2">
+                                                            <button type="danger" class="btn btn-danger btn-sm">Cancel</button>
+                                                        </div>-->
+                                </div>
+                            </form>
+                            <div class="text-center">
+                                <a class="text-secondary" data-toggle="collapse" href="#collapseExample"
+                                    aria-expanded="true" aria-controls="collapseExample"><u>Hide window</u></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <hr class="mt-4 mb-0 pb-0">
+                <div class="row pr-lg-5 pl-lg-4 pb-4 pt-0 mt-0">
+                    <div class="col-lg-2 pt-0 pt-lg-3 sticky-top">
+                        <div class="my-2 my-lg-4 mr-lg-3 ml-lg-0 pl-lg-0 sticky-top">
+                            <div class="nav nav-pills d-flex flex-row d-lg-block text-center text-lg-left"
+                                id="pills-tab" role="tablist">
+                                <a class="nav-link active col-6 col-lg-12" id="v-pills-overview-tab" data-toggle="pill"
+                                    href="#v-pills-overview" role="tab" aria-controls="v-pills-overview"
+                                    aria-selected="true">Overview</a>
+                                <a class="nav-link col-6 col-lg-12" id="v-pills-yreport-tab" data-toggle="pill"
+                                    href="#v-pills-yreport" role="tab" aria-controls="v-pills-yreport"
+                                    aria-selected="false">Your Report</a>
+                            </div>
+                        </div>
+                        <div class="d-block d-lg-none border-bottom"></div>
+                    </div>
+                    <div class="col-lg-10 pt-4 border-left">
+                        <div class="tab-content ml-lg-3 p-3" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-overview" role="tabpanel"
+                                aria-labelledby="v-pills-overview-tab">
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <div class="card">
+                                            <div class="row pt-3 pr-3" id="cases">
+                                                <div class="col-4" style="color:red;">
+                                                    <div>
+                                                        <h5>New Cases</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4" style="color: rgb(182, 182, 30)">
+                                                    <div>
+                                                        <h5 class="">Solving Cases</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4" style="color: green">
+                                                    <div>
+                                                        <h5>Solved Cases</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4" style="color:red;">
+                                                    <div>
+                                                        <h1 class="newCases">4</h1>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4" style="color: rgb(182, 182, 30)">
+                                                    <div>
+                                                        <h1 class="solvingCases">2</h1>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4" style="color: green">
+                                                    <div>
+                                                        <h1 class="solvedCases">0</h1>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 mb-1 font-italic ml-1"><small>Updated Monthly</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <div class="card" style="height: 100%;">
+                                            <div class="card-header pb-0">
+                                                <h5>Reporter of the Month</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-5 col-md-12 col-sm-5 p-2">
+                                                        <a href="https://www.instagram.com/syahmirastam/"><img
+                                                                src="https://drive.google.com/uc?id=1fQw76lOZcL4IlPZ7z5TAAyawWs8Ze_ZK&export=download"
+                                                                class="rounded img-fluid mb-3" alt="gambar hensem"
+                                                                data-toggle="tooltip" data-placement="top"
+                                                                title="@syahmirastam"></a>
+                                                    </div>
+                                                    <div class="col-lg-7 col-md-12 col-sm-7 pl-1">
+                                                        <h5
+                                                            class="card-title text-lg-left text-md-center text-sm-left text-center">
+                                                            Syahmi Rastam
+                                                        </h5>
+                                                        <p class="card-text">
+                                                            <ul class="ml-3">
+                                                                <li>2nd Year</li>
+                                                                <li>Faculty of Science</li>
+                                                                <li>Number of reports: 6</li>
+                                                            </ul>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pl-0">
+                                        <div class="card text-center mb-3 ml-3 ml-md-0" style="height: 100%;">
+                                            <div class="card-header pb-0">
+                                                <h5>Monthly Issues</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul class="list-group list-group-flush"
+                                                    style="background-color: transparent;">
+                                                    <li class="list-group-item">WIFI CONNECTION</li>
+                                                    <li class="list-group-item">SHOWER DOOR LOCK</li>
+                                                    <li class="list-group-item">DRYER</li>
+                                                    <li class="list-group-item">GARBAGE BIN</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-yreport" role="tabpanel"
+                                aria-labelledby="v-pills-yreport-tab">
+                                <div class="d-block pb-1 text-dark text-right">
+                                    <div>
+                                        <a style="color: black; font-size: 18px;" data-toggle="collapse"
+                                            href="#editColumn" aria-expanded="false" aria-controls="editColumn"
+                                            onclick="if(this.innerHTML =='Edit'){this.innerHTML = 'Done'}else{this.innerHTML = 'Edit'}">Edit</a>
+                                    </div>
+                                </div>
+                                <div class="scrollmenu card">
+                                    <table class="table table-bordered text-center mb-0" style="border-radius: 0.35rem;"
+                                        id="report-table">
+                                        <tr class=" text-center card-header">
+                                            <th>Ticket No.</th>
+                                            <th>Problem Category</th>
+                                            <th>Problem Type</th>
+                                            <th>Status</th>
+                                            <th>Ticket Date/Time</th>
+                                            <th class="collapse" id="editColumn">Edit</th>
+                                        </tr>
+                                        <tr>
+                                            <td>200310-281</td>
+                                            <td>Network</td>
+                                            <td>Wireless (Student)</td>
+                                            <td><span class="badge badge-info">New</span></td>
+                                            <td>10-03-20 10:59 PM</td>
+                                            <td class="collapse" id="editColumn"><a onclick="deleterow(this)" href="#!"
+                                                    class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>200213-258</td>
+                                            <td>Application System</td>
+                                            <td>UMSItS-Enrolment</td>
+                                            <td><span class="badge badge-info">New</span></td>
+                                            <td>13-02-20 03:07 PM</td>
+                                            <td class="collapse" id="editColumn"><a onclick="deleterow(this)" href="#!"
+                                                    class="delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>200213-59</td>
+                                            <td>Application System</td>
+                                            <td>UMSItS-Enrolment</td>
+                                            <td><span class="badge badge-warning">In Progress</span></td>
+                                            <td>13-02-20 09:47 AM</td>
+                                            <td class="collapse" id="editColumn">
+                                                <div class="disabled-delete"><i class="fa fa-trash"
+                                                        aria-hidden="true"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>200212-6</td>
+                                            <td>Application System</td>
+                                            <td>UMSItS-Enrolment</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                            <td>12-02-20 02:50 AM</td>
+                                            <td class="collapse" id="editColumn">
+                                                <div class="disabled-delete"><i class="fa fa-trash"
+                                                        aria-hidden="true"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>200115-257</td>
+                                            <td>Application System</td>
+                                            <td>UMSItS-Trial Run</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                            <td>15-01-20 03:36 PM</td>
+                                            <td class="collapse" id="editColumn">
+                                                <div class="disabled-delete"><i class="fa fa-trash"
+                                                        aria-hidden="true"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>200107-167</td>
+                                            <td>8th Residential College</td>
+                                            <td>DRYER</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                            <td>07-01-20 10:27 PM</td>
+                                            <td class="collapse" id="editColumn">
+                                                <div class="disabled-delete"><i class="fa fa-trash"
+                                                        aria-hidden="true"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>200107-165</td>
+                                            <td>8th Residential College</td>
+                                            <td> SHOWER</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                            <td>07-01-20 10:24 PM</td>
+                                            <td class="collapse" id="editColumn">
+                                                <div class="disabled-delete"><i class="fa fa-trash"
+                                                        aria-hidden="true"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>200107-163</td>
+                                            <td>Network</td>
+                                            <td>Wireless (Student)</td>
+                                            <td><span class="badge badge-success">Completed</span></td>
+                                            <td>07-01-20 10:22 PM</td>
+                                            <td class="collapse" id="editColumn">
+                                                <div class="disabled-delete"><i class="fa fa-trash"
+                                                        aria-hidden="true"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--  container-fluid px-2 px-sm-5 py-auto bg-dark  -->
+        <footer class="container-fluid px-2 px-sm-5 py-auto">
+            <div class="d-flex flex-column flex-sm-row text-light font-italic">
+                <div class="py-1 ml-sm-0 text-center">
+                    Copyright © 2020 - Kinabalu Residential College,&nbsp;<a class="text-light text-nowrap ml-sm-0"
+                        data-toggle="tooltip" data-placement="top" href="https://www.um.edu.my/" title="um.edu.my"><u>
+                            University
+                            of Malaya</u>
+                    </a>.
+                </div>
+                <div class="mx-auto mr-sm-0 pt-sm-1 pb-2 pb-sm-0">
+                    <a tabindex="0" class="text-light" data-toggle="tooltip" data-placement="top"
+                        href="https://www.instagram.com/unimalaya/" title="@unimalaya"><i
+                            class="px-2 fa fa-instagram fa-lg"></i></a><a tabindex="0" class="text-light"
+                        data-toggle="tooltip" data-placement="top" href="https://twitter.com/unimalaya/"
+                        title="@unimalaya"><i class="px-2 fa fa-twitter fa-lg"></i></a>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+</html>
